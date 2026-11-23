@@ -1,0 +1,26 @@
+{
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "icons": [
+    {
+      "sizes": "512x512",
+      "src": "icons/icon-512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any maskable",
+      "sizes": "192x192",
+      "src": "icons/icon-192.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "es-419",
+  "name": "Inspeccón visual PWA",
+  "short_name": "InspecciónPWA",
+  "start_url": "./index.html",
+  "scope": "./",
+  "description": "Captura de evidencia fotgráfica con acceso consistente a cámara"
+}

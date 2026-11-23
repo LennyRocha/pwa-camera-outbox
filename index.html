@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Inspección Visual PWA</title>
+    <meta
+      name="description"
+      content="Captura de evidencia fotográfica con acceso consciente a cámara."
+    />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Rutas RELATIVAS: GitHub Pages sirve el sitio en /pwa-camara-instalable/ -->
+    <link rel="manifest" href="./manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./icons/icon-192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./icons/icon-192.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="barra">
+      <h1 class="titulo">Inspección visual</h1>
+      <button
+        id="btn-instalar"
+        class="btn btn-contorno"
+        type="button"
+        hidden
+      >
+        Instalar app
+      </button>
+    </header>
+
+    <main class="contenido">
+      <!-- Visor: el marco de esquinas es la identidad visual de la app -->
+      <section
+        class="visor"
+        aria-label="Vista previa de la cámara"
+      >
+        <video
+          id="visor-camara"
+          autoplay
+          playsinline
+          muted
+        ></video>
+        <span class="esquina esquina-ai"></span>
+        <span class="esquina esquina-ad"></span>
+        <span class="esquina esquina-bi"></span>
+        <span class="esquina esquina-bd"></span>
+        <p id="visor-vacio" class="visor-vacio">
+          Cámara apagada
+        </p>
+      </section>
+
+      <p
+        id="mensaje-estado"
+        class="estado"
+        role="status"
+        aria-live="polite"
+      >
+        La cámara está apagada.
+      </p>
+
+      <!-- Aviso ético: aparece ANTES del diálogo nativo del navegador -->
+      <section
+        id="aviso-permiso"
+        class="aviso"
+        aria-labelledby="aviso-titulo"
+        hidden
+      >
+        <h2 id="aviso-titulo" class="aviso-titulo">
+          Antes de encender la cámara
+        </h2>
+        <p class="aviso-texto">
+          Esta aplicación requiere acceso a tu cámara
+          únicamente para mostrar una vista previa local en
+          pantalla. Ninguna imagen se envía a servidores
+          externos.
+        </p>
+        <p class="aviso-texto">
+          Se encenderá la cámara trasera. Puedes cambiar de
+          lente o apagarla cuando quieras.
+        </p>
+        <div class="fila">
+          <button
+            id="btn-cancelar-permiso"
+            class="btn btn-contorno"
+            type="button"
+          >
+            Ahora no
+          </button>
+          <button
+            id="btn-confirmar-permiso"
+            class="btn btn-primario"
+            type="button"
+          >
+            Aceptar y encender cámara
+          </button>
+        </div>
+      </section>
+
+      <div class="controles">
+        <button
+          id="btn-preparar-camara"
+          class="btn btn-primario btn-ancho"
+          type="button"
+        >
+          Solicitar acceso a cámara
+        </button>
+        <div class="fila" id="controles-activos" hidden>
+          <button
+            id="btn-alternar-camara"
+            class="btn btn-contorno"
+            type="button"
+          >
+            Cambiar cámara
+          </button>
+          <button
+            id="btn-apagar-camara"
+            class="btn btn-peligro"
+            type="button"
+          >
+            Apagar cámara
+          </button>
+        </div>
+      </div>
+
+      <p id="ayuda-ios" class="ayuda" hidden>
+        En iPhone: toca Compartir y luego “Agregar a
+        pantalla de inicio” para instalar la app.
+      </p>
+
+      <p class="aviso-texto">
+        Leonardo Sanchez 10*B
+      </p>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
